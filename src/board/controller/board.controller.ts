@@ -20,14 +20,14 @@ export class BoardController {
   constructor(private readonly boardService: BoardService) {
   }
 
-  @Get()
-  getAllBoard() {
-    return this.boardService.getAllBoards();
-  }
+  // @Get()
+  // getAllBoard() {
+  //   return this.boardService.getAllBoards();
+  // }
 
   @Post()
   @UsePipes(ValidationPipe)
-  createBoard(@Body() createBoardDto: CreateBoardDto) {
+  createBoard(@Body() createBoardDto: CreateBoardDto): Promise<Board> {
     return this.boardService.createBoard(createBoardDto);
   }
 
@@ -36,16 +36,16 @@ export class BoardController {
     return this.boardService.getBoardById(id);
   }
 
-  @Delete('/:id')
-  deleteBoardById(@Param('id') id: string) {
-    this.boardService.deleteBoardById(id);
-  }
+  // @Delete('/:id')
+  // deleteBoardById(@Param('id') id: string) {
+  //   this.boardService.deleteBoardById(id);
+  // }
 
-  @Patch('/:id/status')
-  updateBoardStatus(
-    @Param('id') id: string,
-    @Body('status', BoardStatusValidationPipe) status: BoardStatus,
-  ) {
-    return this.boardService.updateBoardStatus(id, status);
-  }
+  // @Patch('/:id/status')
+  // updateBoardStatus(
+  //   @Param('id') id: string,
+  //   @Body('status', BoardStatusValidationPipe) status: BoardStatus,
+  // ) {
+  //   return this.boardService.updateBoardStatus(id, status);
+  // }
 }
