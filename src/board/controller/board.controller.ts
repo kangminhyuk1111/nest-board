@@ -12,9 +12,9 @@ import {
 } from '@nestjs/common';
 import { BoardService } from '../service/board.service';
 import { CreateBoardDto } from '../dto/create-board-dto';
-import { Board } from '../board-entity';
+import { Board } from '../entity/board-entity';
 import { BoardStatusValidationPipe } from '../pipes/board-status-validation.pipe';
-import { BoardStatus } from '../board-status-enum';
+import { BoardStatus } from '../enum/board-status-enum';
 
 @Controller('board')
 export class BoardController {

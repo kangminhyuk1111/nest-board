@@ -1,6 +1,6 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { Board } from '../board/board-entity';
-import { User } from '../auth/user.entity';
+import { Board } from '../board/entity/board-entity';
+import { User } from '../auth/entity/user.entity';
 
 export const typeORMConfig: TypeOrmModuleOptions = {
   type: 'postgres',
